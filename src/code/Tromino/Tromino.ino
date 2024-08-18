@@ -18,6 +18,8 @@
 #define maxRotations 2
 #define melodyPin    3
 
+
+
 LiquidCrystal lcd(8, 9, 4, 5, 6, 7);
 
 boolean matrix[16][4];
@@ -26,6 +28,9 @@ int currentX, currentY, currentRot, currentShape, prevKey, gameSpeed, score, hig
 unsigned long timeToMove;
 unsigned long melodyDelay;
 boolean melodyOn;
+int blockCount = 0;
+const int SPEED_INCREASE_INTERVAL = 10; // Adjust this value as needed
+const int MIN_GAME_SPEED = 100; // Adjust this value as needed
 
 //notes in the melody:
 static const int PROGMEM melody[] = {
@@ -306,15 +311,15 @@ int getNoteDuration(int k) {
 }
 
 void playNote() {
-    if (!melodyOn) return;
-    if (millis() > melodyDelay) {
-      int noteDuration = 1000/getNoteDuration(melodyNote);
-      tone(melodyPin, getNote(melodyNote),noteDuration);
-      if (melodyNote < 385) melodyNote++;
-      else melodyNote = 0;
-      int pauseBetweenNotes = noteDuration * 1.30;
-      melodyDelay = millis()+pauseBetweenNotes;
-    }
+  if (!melodyOn) return;
+  if (millis() > melodyDelay) {
+    int noteDuration = 1000/getNoteDuration(melodyNote);
+    tone(melodyPin, getNote(melodyNote),noteDuration);
+    if (melodyNote < 385) melodyNote++;
+    else melodyNote = 0;
+    int pauseBetweenNotes = noteDuration * 1.30;
+    melodyDelay = millis()+pauseBetweenNotes;
+  }
 }
 
 void initialize() {
@@ -386,7 +391,7 @@ void loop()
   {
     while (millis() < timeToMove)
     {
-      playNote(melodyNote, melodyDelay, melodyPin, melodyOn);
+      playNote();
       int k = getKey();
       if (k != prevKey)
       {
@@ -404,7 +409,7 @@ void loop()
         case btnRight:
           while (moveDown())
           {
-            playNote(melodyNote, melodyDelay, melodyPin, melodyOn);
+            playNote();
           }
           break;
         case btnSelect:
