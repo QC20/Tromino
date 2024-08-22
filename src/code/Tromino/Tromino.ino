@@ -1,9 +1,7 @@
 /*
  * Tromino - a Tetris like game for the LCD Keypad Shield.
- * Written by @dadecoza 2016
- * Pretty much the same as https://github.com/dzimboum/triscalino but with less OOP.
- * Tetris music sketch by electric mango https://github.com/electricmango/Arduino-Music-Project/blob/master/A_Theme___Tetris_with_Bass/A_Theme___Tetris_with_Bass.ino
  */
+
 #include <LiquidCrystal.h>
 #include <EEPROM.h>
 #include "pitches.h"
