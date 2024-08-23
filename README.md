@@ -1,46 +1,73 @@
-# Tromino: Arduino-based Tetris-like Game
+# Tromino Game for Arduino
 
-Tromino is an engaging, pocket-sized interpretation of the classic Tetris game, designed for the Arduino Uno with an LCD shield. This project explores the intersection of physical computing, game design, and user interaction in constrained environments.
+This project implements a Tetris-like game called Tromino for Arduino using an LCD Keypad Shield.
 
-## Project Overview
+![Tromino Start Screen](/src/assets/img/Tromino_StartScreen2.jpg)
 
-Tromino reimagines the iconic falling-block puzzle game within the limitations of a 16x2 LCD display, creating a unique and challenging gameplay experience. By leveraging the Arduino platform, this project demonstrates how to create engaging interactions with minimal hardware.
+## Requirements
 
-## Key Features
+- Arduino board (e.g., Arduino Uno)
+- LCD Keypad Shield
+- Arduino IDE
 
-- Adaptive difficulty: Game speed increases gradually for a balanced challenge
-- Custom block designs optimized for the 16x2 LCD display
-- Intuitive controls using the LCD shield's button interface
-- Score tracking and high score memory
-- Optional background music for enhanced user engagement
+## Setup
 
-## Interaction Design Highlights
+1. **Hardware Setup**
+   - Attach the LCD Keypad Shield to your Arduino board.
+   - Connect a piezo buzzer or speaker to pin 3 for sound output.
 
-- Simplified yet recognizable game elements to maintain cognitive ease
-- Responsive controls for improved user agency and flow
-- Progressive difficulty to balance challenge and skill, promoting a state of flow
-- Audiovisual feedback to enhance the sense of direct manipulation
+2. **Software Setup**
+   - Download and install the [Arduino IDE](https://www.arduino.cc/en/software) if you haven't already.
+   - Open the Arduino IDE.
 
-## Hardware Requirements
+3. **Installing Required Libraries**
+   - Go to Sketch > Include Library > Manage Libraries
+   - Search for and install the `LiquidCrystal` library if it's not already installed.
 
-- Arduino Uno
-- 16x2 LCD Shield with buttons
-- (Optional) Piezo buzzer for audio feedback
+4. **Uploading the Code**
+   - Create a new sketch in the Arduino IDE.
+   - Copy and paste the contents of `Tromino.ino` into the sketch.
+   - Create a new tab named `pitches.h` and copy the contents of the `pitches.h` file into it.
+   - Select your Arduino board type from Tools > Board.
+   - Select the correct port from Tools > Port.
+   - Click the Upload button (right arrow icon) to compile and upload the code to your Arduino.
 
-## Getting Started
+## How to Play
 
-1. Clone this repository
-2. Connect your Arduino Uno with the LCD shield
-3. Open the Tromino.ino file in the Arduino IDE
-4. Upload the sketch to your Arduino
-5. Enjoy your pocket-sized Tetris experience!
+- Use the buttons on the LCD Keypad Shield to control the game:
+  - Up: Move left
+  - Down: Move right
+  - Left: Rotate piece
+  - Right: Drop piece quickly
+  - Select: Toggle sound on/off
 
-## Contributing
+- The game starts automatically after displaying the title screen and high score.
+- Try to complete lines to score points.
+- The game speeds up as you play longer.
+- The game ends when a piece can't be placed at the top of the screen.
 
-We welcome contributions to enhance Tromino's gameplay, optimize its performance, or expand its features. Please see our contributing guidelines for more information.
+Here's a video demonstration of the gameplay:
 
-## License
+[Watch the demo video](/src/assets/vid/Tromino-In-Game(Compressed).mp4)
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+## Customization
 
+- You can adjust game parameters like speed and scoring in the code.
+- The melody can be modified by changing the notes in the `melody` array.
 
+## Troubleshooting
+
+- If the display doesn't work, check your wiring and make sure the LCD Keypad Shield is properly connected.
+- If there's no sound, verify that the piezo buzzer is connected to pin 3.
+- If the buttons don't respond, ensure the LCD Keypad Shield is properly seated on the Arduino board.
+
+## Notes
+
+- This code uses EEPROM to store the high score, which may have limited write cycles. Consider using external storage for frequent updates in a production environment.
+- The code assumes specific pin connections for the LCD Keypad Shield. If you're using a different shield or custom wiring, you may need to adjust the pin definitions in the code.
+
+## Game Screenshots
+
+![In-Game Screenshot](/src/assets/img/Tromino_InGame.jpeg) ![Game Over Screenshot](/src/assets/img/Tromino_GameOver.jpeg)
+
+Enjoy playing Tromino on your Arduino!
