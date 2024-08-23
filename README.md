@@ -48,7 +48,7 @@ This project implements a Tetris-like game called Tromino for Arduino using an L
 
 Here's a video demonstration of the gameplay:
 
-[Watch the demo video](/src/assets/vid/Tromino-In-Game(Compressed).mp4)
+![Watch the demo video](/src/assets/vid/Tromino-In-Game(Compressed).mp4)
 
 ## Customization
 
