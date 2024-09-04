@@ -47,8 +47,8 @@ This project implements a Tetris-like game called Tromino for Arduino using an L
 - The game ends when a piece can't be placed at the top of the screen.
 
 Here's a video demonstration of the gameplay:
+https://github.com/user-attachments/assets/344ea21b-9c75-4db8-89e4-3d428cf4419a
 
-![Watch the demo video](/src/assets/vid/Tromino-In-Game(Compressed).mp4)
 
 ## Customization
 
