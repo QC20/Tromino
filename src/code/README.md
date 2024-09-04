@@ -1,6 +1,6 @@
 # Tromino Game for Arduino
 
-This project implements a Tetris-like game called Tromino for Arduino using an LCD Keypad Shield.
+This project implements a Tetris-like game called Tromino for Arduino using an LCD Keypad Shield. Due to the limited size of the LCD display we only make use of Tromino shapes.
 
 ## Requirements
 
