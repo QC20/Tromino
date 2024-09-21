@@ -4,6 +4,7 @@ This project implements a Tetris-like game called Tromino for Arduino using an L
 
 ![Tromino Start Screen](/src/assets/img/Tromino_StartScreen2.jpg)
 
+
 ## Requirements
 
 - Arduino board (e.g., Arduino Uno)
